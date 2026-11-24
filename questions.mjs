@@ -1,0 +1,23 @@
+export const questions = [
+ [1,'Corporate bank accounts','How many corporate bank accounts are there in Hong Kong and in Canada?','Name the banks and which company owns each account. Keep personal and trust accounts separate.'],
+ [2,'Personal bank accounts','How many personal bank accounts do you have in Hong Kong and in Canada?','Bank names and approximate account counts are enough. Say if any are inactive.'],
+ [3,'Bank balances','What are the total personal and corporate bank balances in Hong Kong and in Canada?','Give the currency and approximate date. Keep personal, company and trust balances separate. If someone else has the figures, say who.'],
+ [4,'Where you live','What is your usual home address in Hong Kong and in Canada?','For each home: address, when you moved in and whether it is available for your use. Mention any actual rental to someone else and its dates.'],
+ [5,'Property you own','Do you own any property in Hong Kong or Canada, and what is its market value?','Give the location, owner, your ownership share, approximate current value and currency.'],
+ [6,'Other investments','What other investments do you hold, and what are their total values?','Include shares, private-company interests, funds, crypto and other valuable assets. Explain who holds them, where they are held, the currency and valuation date. Distinguish Hong Kong assets from overseas assets held through a Hong Kong account.'],
+ [7,'Cars','Do you own any cars in Hong Kong or Canada?','Give the make/model and where they are registered.'],
+ [8,'Businesses you own','Which businesses do you own in Hong Kong or Canada?','Company name, jurisdiction, ownership percentage, revenue and asset value. Explain any trust or holding-company arrangement.'],
+ [9,'Company directorships','Which companies are you a director of in Hong Kong or Canada?','Company names, jurisdictions and appointment dates. Include revenue and assets if you have not already covered them.'],
+ [10,'Employment and pay','Are you employed or engaged as a consultant, adviser or executive?','Employer/client, title, dates and where you work. Mention salary, fees, director pay and equity or non-cash compensation. Cover Hong Kong and Canada.'],
+ [11,'Company size and assets','How large are the companies you own or direct, and what important assets do they hold?','Revenue, total/net assets, main investments and staff/operations. Say who can provide the accounts if you do not have the figures.'],
+ [12,'Your main credit card','Where is your primary credit card issued?','Issuer and country, who owns the card account and its billing address. Mention other Hong Kong or Canadian cards. No full card numbers.'],
+ [13,'Your main phone number','Which number is your primary contact, and where was it issued?','Give the number and country. Mention another number if you use it for banking or business.'],
+ [14,'Insurance','What insurance do you have in Hong Kong and Canada?','Insurer, type of cover and whether it is active. Include health coverage. No full policy numbers needed.'],
+ [15,'Family-office plans','Are you planning to set up a single-family office?','What has been decided, anything already established and what is still only an idea. Mention any relevant Hong Kong or Canadian arrangement.'],
+ [16,'Memberships','What club or other memberships do you have in Hong Kong and outside Hong Kong?','Name, membership type and when it became active. Separate membership applications from accepted memberships.'],
+ [17,'Professional qualifications','What professional qualifications or licences do you hold?','Designation, issuing body, jurisdiction and whether it is current. Say none if applicable.'],
+ [18,'Family and children','Which family members live in Hong Kong and which live elsewhere?','Their relationship to you and usual city/country. Include spouse/partner and any children; where do the children attend school?'],
+ [19,'Family-owned property','Do your family members own property in Hong Kong or elsewhere?','Owner, relationship and property location. Mention any joint ownership or recent title changes.'],
+ [20,'Where family spends time','Where do your family members normally live and spend their time?','Usual home and time pattern for parents, spouse/partner and children, as applicable. Separate visits and mailing addresses from where they actually live.'],
+ [21,'Social security','Where do you pay social security contributions?','Hong Kong MPF, Canadian CPP/QPP or other countries. Say whether contributions are current and who pays them.']
+].map(([id,title,prompt,hint])=>({id,title,prompt,hint,section:id<16?'Economic ties · Hong Kong and Canada':'Social and family ties · Hong Kong and elsewhere'}));
