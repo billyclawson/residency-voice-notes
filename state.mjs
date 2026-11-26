@@ -9,3 +9,6 @@ export function parseImport(raw){const x=JSON.parse(raw);if(!x||x.version!==1||!
 export function load(storage){try{const raw=storage.getItem(KEY);return raw?{state:parseImport(raw),recoveryRequired:false}:{state:fresh(),recoveryRequired:false};}catch{return {state:fresh(),recoveryRequired:true};}}
 export function transcript(base,results){return [base.trim(),...Array.from(results,r=>r[0]?.transcript?.trim()||'')].filter(Boolean).join(' ');}
 export function report(s){return ['RESIDENCY QUESTIONNAIRE ANSWERS','Updated: '+(s.updatedAt||'Not yet edited'),'Raw responses for review. Unknown and follow-up items are retained.','',...questions.flatMap(q=>[`${q.id}. ${q.title}`,q.prompt,`Status: ${labels[s.answers[q.id].status]}`,s.answers[q.id].text||'(No response recorded)','',''])].join('\n');}
+
+export function answeredCount(s){return questions.filter(q=>s.answers[q.id].text.trim().length>0).length;}
+export function canSubmit(s){return answeredCount(s)===questions.length;}
